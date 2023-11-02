@@ -1,7 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 import React from 'react';
-import MyUsers from './components/MyUsers';
+import MyAll from './components/MyAll';
+
 
 function App() {
   return (
@@ -10,7 +11,8 @@ function App() {
         <p>rent your favorite car at your favorite time!</p>
       </header>
       <h2>HELLO</h2>
-      <MyUsers />
+      <MyAll />
+      
     </div>
   );
 }
