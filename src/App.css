@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+
+.box {
+  border: inset 2px black;
+  padding: 2%;
+  margin: 2%;
+}

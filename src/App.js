@@ -1,24 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
 import React from 'react';
+import MyUsers from './components/MyUsers';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          rent your favorite car at your favorite time!
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Carental
-        </a>
+        <p>rent your favorite car at your favorite time!</p>
       </header>
+      <h2>HELLO</h2>
+      <MyUsers />
     </div>
   );
 }
