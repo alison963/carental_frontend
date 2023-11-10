@@ -1,18 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
 import React from 'react';
-import MyAll from './components/MyAll';
-
+import MyAll from './components/MyUsers';
+import Navbar from './components/navbar';
+import Content from './components/Content';
 
 function App() {
   return (
+    
     <div className="App">
-      <header className="App-header">
-        <p>rent your favorite car at your favorite time!</p>
-      </header>
-      <h2>HELLO</h2>
-      <MyAll />
-      
+      <Navbar />
+      <Content />
     </div>
   );
 }

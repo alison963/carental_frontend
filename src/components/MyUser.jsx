@@ -10,15 +10,7 @@ const MyUser = ({user}) => {
               <br />
             </p>
             <a href={user.email}>{user.email}</a>
-            <pre>
-           {user.username}
-            </pre>
-            <pre>
-           {user.phone}
-            </pre>
-            <pre>
-           {user.website}
-            </pre>
+            
           </div>
               
     </div>
