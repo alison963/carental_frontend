@@ -1,3 +1,6 @@
+import Users from "../Users";
+
+
 const Navbar = () => {
     return ( 
         <div className="navbar">

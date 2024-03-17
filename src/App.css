@@ -39,5 +39,5 @@ text-align: center;
   display: grid;
   padding: 20px;
   border: 1px solid #ccc;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(6,1fr);
 }
