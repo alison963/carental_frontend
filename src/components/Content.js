@@ -2,9 +2,9 @@ import MyUsers from "./MyUsers";
 
 const Content = () => {
     return ( 
-        <div className="content">
+        <div >
             <h1>Choose your car!</h1>
-            <div className="contentCar">
+            <div >
                 <div><MyUsers /></div>
             </div>
 
