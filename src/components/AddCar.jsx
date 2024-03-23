@@ -1,39 +1,56 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 
-function AddCar ( ) {
+function AddCar (props ) {
+    // const storedItems  = JSON.parse(localStorage.getItem('names'))
 
-    const [enteredText, setEnteredText] = useState(false);
+    const [car, setCar] = useState({
+      name: "",
+      price: ""
+    });
+    
+
     function handleClick(event) {
-    setEnteredText(true);
-
-    event.preventDefault();
+        props.onAdd(car);
+        setCar({
+          name: "",
+          price: ""
+        })
+        event.preventDefault();
+    }
+    function handleChange(event) {
+      const {name, value} = event.target;
+      
+      setCar(prevCar => {
+        return {
+          ...prevCar,
+          [name]: value
+        };
+      });
     }
 
-    const [name, setName] = useState(" ");
-
-    function handleChange(event) {
-    setName(event.target.value);
-
-
-  }
+  // useEffect(() => {
+  //   localStorage.setItem(JSON.stringify("names",names));
+    
+  // })
 
     return (
         <div className="container">
             <h1>Add You Car</h1>
-            <h1>Hello {enteredText && name} </h1>
-            <form onSubmit={handleClick}>
+            <h1>Hello </h1>
+            <form>
             <input
                 onChange={handleChange}
-                type="text"
+                name="name"
                 placeholder="Car name"
-                value={name}
+                value={car.name}
             />
             <input
-                type="text"
-                placeholder="Car username"
-                
+                onChange={handleChange}
+                name="price"
+                placeholder="Car price"
+                value={car.price}
             />
-            <button typ = "Submit">Submit</button>
+            <button onClick={handleClick}>Submit</button>
             </form>
         </div>
       );

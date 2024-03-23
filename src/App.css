@@ -1,7 +1,3 @@
-.App {
-  text-align: center;
-}
-
 .navbar {
   background: #1c4645;
   display: grid;
@@ -27,10 +23,11 @@ text-align: center;
 
 }
 body {
+  
   font-family: "Source Sans Pro", sans-serif;
-  color: white;
+  color: black;
   font-weight: 300;
-  background: #50a3a2;
+  background-color: rgba(3, 102, 82, 0.3);
   width: 100%;
   height: 100%;
 }
