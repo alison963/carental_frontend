@@ -25,6 +25,8 @@ function App() {
       return [...prevItem, newCar];
     })
   }
+
+  
   useEffect(() => {
     localStorage.setItem("cars", JSON.stringify(cars));
     console.log("error");

@@ -1,13 +1,22 @@
 import React from "react";
+import "./Content.css";
 
 function Content(props)  {
     return ( 
-        <div className= "grid my-5 text-center #1c4645 bg-teal-800  p-4 mx-4">
+        <div className= "ContentAll">
             <h1>{props.name}</h1>
             <p>{props.price}</p>
+            <div className="Buttons">
             <button onClick={() => {
                 props.onDelete(props.id)
             }}>delete</button>
+            <button onClick={() => {
+                props.onEdit(props.id)
+            }}>Edit</button>
+            <button onClick={() => {
+                props.onInfo(props.id)
+            }}>Info</button>
+            </div>
         </div>
      );
 }

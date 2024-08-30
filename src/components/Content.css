@@ -1,0 +1,19 @@
+.ContentAll {
+    display: flex;
+    flex-direction: column;
+    background-color: #50a3a2;
+    margin: 2vh;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 2vw;
+    box-shadow: 5px 5px 10px 0px black;
+    
+
+}
+
+
+.Buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
