@@ -1,32 +1,36 @@
 import React, {useEffect, useState} from "react";
 
-function AddCar (props ) {
-    // const storedItems  = JSON.parse(localStorage.getItem('names'))
 
-    const [car, setCar] = useState({
+function AddCar (props ) {
+    
+
+    const [car, setCar] = useState({ //an object with there values name, price and a distance 
       name: "",
-      price: ""
+      price: "", 
+      distance: ""
     });
     
 
-    function handleClick(event) {
+    function handleClick(event) { // every time i click the button 
         props.onAdd(car);
-        setCar({
+        setCar({ // updating the array of the object of car 
           name: "",
-          price: ""
+          price: "",
+          distance: ""
         })
-        event.preventDefault();
+        event.preventDefault(); // preventing reloading of page 
     }
     function handleChange(event) {
-      const {name, value} = event.target;
+      const {name, value} = event.target; // event.target is the elemnt where handelchange has triggered and here i store it in name, value  
       
-      setCar(prevCar => {
+      setCar(prevCar => { //updating cars by returning the new values to the old values
         return {
           ...prevCar,
           [name]: value
         };
       });
     }
+  
 
   // useEffect(() => {
   //   localStorage.setItem(JSON.stringify("names",names));
@@ -36,19 +40,25 @@ function AddCar (props ) {
     return (
         <div className="container">
             <h1>Add You Car</h1>
-            <h1>Hello </h1>
+            <h1> {car.name} </h1>
             <form>
             <input
-                onChange={handleChange}
+                onChange={handleChange} // handelChange will be triggered every time the input change
                 name="name"
                 placeholder="Car name"
                 value={car.name}
             />
             <input
-                onChange={handleChange}
+                onChange={handleChange} // here also 
                 name="price"
                 placeholder="Car price"
                 value={car.price}
+            />
+            <input
+                onChange={handleChange} // an also here
+                name="distance"
+                placeholder="distance"
+                value={car.distance}
             />
             <button onClick={handleClick}>Submit</button>
             </form>
