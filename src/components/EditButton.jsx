@@ -1,7 +1,7 @@
-import React, {useState} from "react";
+import React, { useState} from "react";
 
 
-function AddCar (props ) {
+function EditButton (props) {
     
 
     const [car, setCar] = useState({ //an object with there values name, price and a distance 
@@ -30,19 +30,16 @@ function AddCar (props ) {
         };
       });
     }
-   
+  
 
-
+  // useEffect(() => {
+  //   localStorage.setItem(JSON.stringify("names",names));
+    
+  // })
 
     return (
         <div className="container">
-            {props.header && 
-              <h1>add your car</h1>
-            }
-            {!props.header && 
-              <h1>change car</h1>
-              }
-            
+            <h1>Add You Car</h1>
             <h1> {car.name} </h1>
             <form>
             <input
@@ -63,10 +60,10 @@ function AddCar (props ) {
                 placeholder="distance"
                 value={car.distance}
             />
-            {props.bool && <button onClick={handleClick}>Submit</button> /* hide button if in edit mode*/ } 
+            <button onClick={handleClick}>Submit</button>
             </form>
         </div>
       );
 }
 
-export default AddCar;
+export default EditButton;
