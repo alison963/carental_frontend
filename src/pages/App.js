@@ -8,15 +8,23 @@ import AddCar from '../components/AddCar';
 function App() {
 
 
+  const [products, setProducts] = useState([]);
 
   // function to delete an Item 
-  function deleteItem(id) { //search in the array by using the value name and the index and return only those that does not match to the id we want to delete
-
+  async function deleteItem(id) { 
+    {
+      await fetch(
+        `http://localhost:4000/Products/${id}`,
+        { method: "DELETE" }
+      );
+      setProducts(products.filter((product) => product.id != id));
+      
+    }
   }
 
   //function to add an Item
   function addItem(newCar) {
-
+    
   }
 
   function saveChanges() {
@@ -26,7 +34,7 @@ function App() {
   /* 
   array is created with useState and it gets updated every time i run the app if something changed in json file 
   */
-  const [products, setProducts] = useState([]);
+  
 
 
   function getProduct() {
@@ -68,6 +76,7 @@ conente : here i loop through json file and pass some information of every car a
               name={product.make}  // Render product name
               price = {product.price}
               mileage = {product.mileage}
+              onDelete = {deleteItem}
               
             />
           </div>
